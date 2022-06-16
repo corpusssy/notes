@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <title>Information Security - Introduction to Information Security by NYUx</title>
+</head>
+<body>
+    <h1 id="page_title"><a href="https://www.edx.org/course/information-security-introduction-to-information-security?index=product&queryID=9f89d3a3a9be32d2549868feb3a306f4&position=2" target="_blank">Information Security - Introduction to Information Security</a> by NYUx</h1>
+    <h5 id="last_updated">Last updated: 6/14/2022</h5>
+    
+    <div id="definitions">
+        <ul>
+            <li><b>Attack</b> - <i>Some action that involves exploitation of some vulnerability in order to cause an existing threat to occur</i></li>
+            <br>
+            <li><b>Vulnerability</b> - <i>A weakness that makes it possible for a threat to occur</i></li>
+            <br>
+            <li><b>Threat</b> - <i>Any potential occurence, maliscious orotherwise, that can have an adverse/negative effect on the assets and ressources associated with the system</i></li>
+            <ul>
+                <br>
+                <li>Types of threats:</li>
+                <ul>
+                    <li>Disclosure</li>
+                    <li>Deception</li>
+                    <li>Disruption</li>
+                    <li>Usurpation</li>
+                </ul>
+                <br>
+            </ul>
+            <li><b>Security policies</b> - <i>A series of rules that must be followed in order to ensure the safety of an organization and it's system</i></li>
+            <br>
+            <ul>
+                <li><b>Inclusive policies</b> - <i>Tells you all the things that you're allowed to do and anything it doesn't tells you about is automatically disallowed</i></li>
+                <li><b>Exclusive policies</b> - <i>Tells you all the things you're not allowed to do and anything it doesn't tell you about is automatically allowed (Requires you to update the policy more frequently since there's always new softwares, features, updates, etc. that come out)</i></li>
+            </ul>
+            <br>
+            <li><b>Security mechanisms</b> - <i>Something that enforces a security policy, either in whole or part</i></li>
+            <br>
+            <ul>
+                <li>There are different security mechanisms that contribute to security policies in different ways:</li>
+                <ul>
+                    <li>Mechanisms based on <b>prevention</b> - <i>Ensures that an aspect of a security policy cannot be violated</i></li>
+                    <li>Mechanisms based on <b>detection</b> - <i>Determines when a security policy has been violated</i></li>
+                    <li>Mechanisms based on <b>recovery</b> - <i>Being able to revert back to a secure state after a security policy has been violated</i></li>
+                </ul>
+                <br>
+                <li>Types of mechanism controls:</li>
+                <ul>
+                    <li>Physical controls</li>
+                    <li>Hardware and software controls</li>
+                    <li>Cryptography and cryptographic primitives</li>
+                </ul>
+                <br>
+                <li>How organizations decide on which security mechanism to allocate their ressources to:</li>
+                <ul>
+                    <li>Laws and regulation</li>
+                    <li>Risk analysis or assessment - <i>Analyzes what can go wrong, how likely it is to happen, what the potential risks are and how tolerable the identified risk is.</i></li>
+                    <li>Cost-benefit analysis</li>
+                    <li>Human issues - <i>Usability, accessability, etc.</i></li>
+                </ul>
+                <br>
+            </ul>
+            <li><b>Security design principles</b></li>
+            <br>
+            <ul>
+                <li>Four fundamental design principles:</li>
+                <ul>
+                    <li>Principle of <b>open design</b> - <i>Get others to comment on your design</i></li>
+                    <li>Principle of <b>sweeping simplifications</b>/<b>KISS</b> (<b>K</b>eep <b>I</b>t <b>S</b>imple <b>S</b>tupid!) - <i>The less complicated something is, the less likely it is someone made an error in its design and implementation (We should make designs and interactions easy and simple)</i></li>
+                    <br>
+                    <ul>
+                        <li>For more complex systems, we use something called <b>layering</b></li>
+                        <ol>
+                            <li>We split our design layers in which each layer only communicates with adjacent/surrounding layers as well as preferably have one role or capability</li>
+                            <li>Then we can apply the principle of sweeping simplifications for each layer, and keep the layers simple which in the end forms a hierarchy of layers, each that are easy to audit and analyze</li>
+                    </ol>
+                    <br>
+                    </ul>
+                    <li>Principle of <b>design for iteration</b> - <i>Designing your software to ensure you can change parts of it in the future in case of any new attacks (Abstraction and modular design are powerful tools for applying this principle)</i></li>
+                    <li>Principle of <b>least atonishment</b> - <i>Have the user in mind when creating a system and create an experience that follows what the user thinks should happen in a given situation</i></li>
+                </ul>
+                <br>
+                <li>More secure design principles:</li>
+                <ul>
+                    <li>Principle of <b>minimizing secrets</b> - <i>Have a way to change our secrets in our code while keeping the rest of the system operating the same</i></li>
+                    <ul>
+                        <li><i>Some systems need to have some secret part in order for them to operate correctly (cryptography, etc.)</i></li>
+                        <li><i>The security of a system shouldn't be entirely dependent on it;s implementation not being seen by its users and other people</i></li>
+                        <li><i>Having a ket hardcoded into your source code can be found then used to bypass your system</i></li>
+                        <li><i>This principle allows us to cooperate with the principle of open design while still maintaining our secrets</i></li>
+                        <li><i>Secrets should be few, and should be easily changeable</i></li>
+                        <li><i>Security through obscurity is a negative phrase used for people who hide parts of their system thinking it's safe</i></li>
+                    </ul>
+                    <br>
+                    <li>Principle of <b>complete mediation</b> - <i>Access control (All access to objects should be checked to ensure that the access is allowed</i></li>
+                    <li>Principle of <b>fail-safe defaults</b> - <i>If some part of the system fails, it shuld fail in a way that has the appropriate security guarantee for whatever it is you want to have happen, in order not to compromise your system)</i></li>
+                    <ul>
+                        <li><i>Our default behavior should be sane and secure</i></li>
+                        <li><i>The idea here is to "fail-close", meaning to fail in a way that does not compromise the data and causes inconvenience, rather than "fail-open", where our method of failing allows the attacker to achieve some objective</i></li>
+                    </ul>
+                    <br>
+                    <li>Principle of <b>least privilege</b> - <i>An entity should only have exactly the permissions they need to have in order to fullfill the tasks they need to perform</i></li>
+                    <ul>
+                        <li><i>Privileges should only be granted such that an individual can perform their duty, and nothing more</i></li>
+                        <li><i>By extension, permissions must be granular enough to grant just the permissions needed to fullfill one's duty. If an elevation of privileges is necessary, it should last only as long as it's needed and should be relinquished immedietly after</i></li>
+                        <li><i>Not only does this principle have large implications for security, it also ensure privacy by minimizing the amount of entities that may see data about or generated by users</i></li>
+                    </ul>
+                    <br>
+                    <li>Principle of <b>economy of mechanism</b> - <i>Security mechanisms should be as simple as possible while still having the security propertie that you need</i></li>
+                    <ul>
+                        <li><i>Large, complex security mechanisms lead to errors while smaller, simpler security mechanisms lead to fewer errors, can be tested easier, and rely on less assumptions</i></li>
+                    </ul>
+                    <br>
+                    <li>Principle of <b>least common mechanism</b> - <i>Mechanisms used to access ressources should not be shared</i></li>
+                    <ul>
+                        <li><i>Shared ressources can lead to denial-of-service attacks or other attacks</i></li>
+                        <li><i>If multiple people are using the same wireless network, they can interfere with each other by jamming the network and making it slow, etc.</i></li>
+                    </ul>
+                </ul>
+            </ul>
+            <br>
+            <li><b>Security model</b> - <i>Something that represents a whole bunch of policies and then tries to have a way for you to understand them and the role they play in the protection for the system that we're trying to protect (It puts everything in context so that we can understand them better)</i></li>
+            <br>
+            <ul>
+                <li><b>Bell-La Padula (BLP) security model</b></li>
+                <br>
+                <ul>
+                    <li>This model is a way to provide confidentiality to a system - As long as they have a reason to, everyone in the system can read information that they have access to as well as all the other information below their level of clearance</li>
+                    <br>
+                    <li>Security properties:</li>
+                    <ul>
+                        <li><b>Simple security property: L(o) <= L(s)</b></li>
+                        <ul>
+                            <li>A subject <i>s</i> may only have read access to an object <i>o</i> only if:
+                                <ul>
+                                    <li>L(o) <= L(s)</i> 
+                                    <li><i>s</i> has a discretionary read access to <i>o</i> (The security clearance of <i>s</i> has to be at least the same level as the <i>o</i> that they're trying to access and read</li>
+                                </ul>
+                                <br>
+                        </ul>
+                        <li><b>* property: L(o) >= L(p)</b></li>
+                        <ul>
+                            <li>A subject <i>s</i> who has read access to an object <i>p</i> may have write access to an object <i>o</i> only if:</li>
+                            <ul>
+                                <li>L(o) >= L(p)</li>
+                                <li><i>s</i> has a discretionary write access to <i>o</i> (Contents of a sensitive object can only be written to objects at least as high as the person's level of clearance)</li>
+                            </ul>
+                            <br>
+                        </ul>
+                    </ul>
+                </ul>
+                <li><b>Biba integrity model</b></li>
+                <br>
+                <ul>
+                    <li>Each piece of data is labeled with an integrity label, as is each entity in the system</li>
+                    <ul>
+                        <li>If a given entity want to write to a piece of data, the data should benefit from the integrity of the individual, or at least remain neutral</li>
+                        <ul>
+                            <li>For this reason, <b>The entity can only write equal to its level, or write down</b> (<b>NO WRITE UP</b>)</li>
+                        </uL>
+                        <br>
+                        <li>However, entites should only read material that would increase their integrity</li>
+                        <ul>
+                            <li>For this reason, <b>the entity should only be able to read documents that are labeled with an integrity label greater than or equal to their own</b> (<b>NO READ DOWN</b>)</li>
+                        </ul>
+                        <br>
+                    </ul>
+                </ul>
+                <li><b>Lipner's model</b></li>
+                <ul>
+                    <li>Uses three principles that are used to ensure that the organization remains safe:</li>
+                    <ul>
+                        <li><b>Seperation of duty</b>: Requiring at least two different people should perform the steps if:</li>
+                        <ul>
+                            <li>The organization follows a seperation of duty</li>
+                            <li>Two or more steps are required to peform a critical function</li>
+                        </ul>
+                        <br>
+                        <li><b>Seperation of function</b>: Isolating the ressources <i>(servers, repositories, etc.)</i> of an organization from each other based on function</li>
+                        <br>
+                        <li><b>Auditing</b>: Analyzing systems to determine what actions took place and who performed them</li>
+                        <br>
+                    </ul>
+                </ul>
+                <li><b>Clark-Wilson integrity model</b> - <i>This model defines enforcement rules and certification rules that both define data items and precoesses that provide the basis for an integrity policy</i></li>
+                <ul>
+                    <li>Primarily concerned with formalizing the notion of information integrity</li>
+                    <ul>
+                        <li>Information integrity is maintained by preveting corruption of data items in a systemdue to either error or malicious intent</li>
+                    </ul>
+                    <br>
+                    <li>Integrity policy</li>
+                    <ul>
+                        <li>Describes how the data items in the system should be kept valid from one state of the system to the next</li>
+                        <li>Specifies the capabilities of various principle in the system</li>
+                    </ul>
+                    <br>
+                </ul>
+                <li><b>Chinese Wall model</b> - <i>This model helps prevent there from being conflicts of interest between different businesses</i></li>
+            </ul>
+            <br>
+            <li><b>Trust</b> - The expectation that arises within a community of regular, honest, cooperative behavior based on commonly shared norms <i>(Definition originally by Francis Fukuyama)</i></li>
+            <ul>
+                <li><i>When we say "trust a mechanism", we're not actually trusting that mechanism directly, instead we are trusting the organization that created that mechanism, and we are trusting them because of a common set of norms thaat we share with them (We can see that security policy is related to trust, since it's related to the mechanisms that are chosen for security, which are inherently trust decisions</i></li>
+            </ul>
+            <br>
+            <li><b>Compartmentalization</b> - <i>Limiting access to information to only those people or organizations who:</i></li>
+            <br>
+            <ul>
+                <li>Need it (Need to Know Principle in order to perform a certain task or function</li>
+                <li>Have the proper clearance</li>
+            </ul>
+            <br>
+            <li><b>Tranquility principle</b> - <i>States that the classification of a subject or object does not change while it is being referenced</i></li>
+            <br>
+            <ul>
+                <li>There are two forms of tranquility:</li>
+                <ul>
+                    <li>Principle of <b>strong tranquility</b> - <i>States that security levels do not change during the normal operation of the system</i></li>
+                    <br>
+                    <li>Principle of <b>weak tranquility</b> - <i>States that security levels may never change in such a way as to violate a defined security policy (Weak tranquility is desirable as it <b>allows systems to observe the principle of least privilege</b></i></li>
+                </ul>
+            </ul>
+            <br>
+            <li><b>Computer security</b> - <i>Defined as preventing attackers from achieving objectives through unauthorized access or unauthorized use of computers and networks by providing certain security properties in certain environments.</i></li>
+            <br>
+            <ul>
+                <li>We enforce computer security with the use of the <b>CIA Triad</b></li>
+                <ul>
+                    <li><b>Confidentiality</b> - <i>The prevention of unauthorized disclosure of information</i></li>
+                    <br>
+                    <li><b>Integrity</b> - <i>The prevention of unauthorized modification of information</i></li>
+                    <br>
+                    <li><b>Availability</b> - <i>The ability to withstand unauthorized withholding of information or ressources (Having the system working as designed and being operational over a long period of time)</i></li>
+                    <br>
+                    <li>Other security concerns: accountability, reliability, authentification, non-repudation and privacy</li>
+                </ul>
+                <br>
+            </ul>
+            <li><b>Assets and ressources</b> - <i>The data, personnel, devices, systems and facilities that enable the organization to achieve its purposes</i></li>
+            <br>
+            <li><b>Elements of security policy and of security mechanism</b> (<i>Let X be a set of entities and Y some information</i>)</li>
+            <br>
+            <ul>
+                <li><b>Confidentiality policy</b> - <i>Y has the property of confidentiality with respect to X members if no members of X can obtain information about Y</i></li>
+                <br>
+                <li><b>Integrity policy</b> - <i>Y has the property of integrity with respect to X if Y is unmodifiable by X</i></li>
+                <br>
+                <li><b>Availability policy</b> - <i>Y has the property of availability with respect to X if all members od X can access Y</i></li>
+                </ul>
+                <br>
+            </ul>
+            <li><b>Threat Modelling</b> - <i>Understanding what can go wrong with the system and being able to reason about the security of it</i></li>
+            <br>
+            <ul>
+                <li>The main steps of Threat Modelling:</li>
+                <ol>
+                    <li>Understand your system and what assets/ressources need to be protected (<b>Enumerate your assets</b>)</li>
+                    <br>
+                    <li>Predict who the potential attackers are against a particular asset and what are the possible known attacks (<b>Determine the possible threats to the system</b>)</li>
+                    <br>
+                    <li>Perform risk assessment (<b>Assess the risks</b>) - <i>Determine what is the expected risk, quantitative or qualitative, of an attack</i></li>
+                    <li>Perform risk managements (<b>Manage the risks</b>) - <i>Employ security mechanisms to mitigate if needed and determine if they're cost effective</i></li>
+                </ol>
+                <br>
+                <li>Microsoft's <b>STRIDE Threat Modelling</b> system - <i>This framework helps us decide what threats are possible against a system and it's different assets</i></li>
+                <ul>
+                    <li><b>S</b>poofing</li>
+                    <li><b>T</b>ampering</li>
+                    <li><b>R</b>epudation</li>
+                    <li><b>I</b>nformation disclosure</li>
+                    <li><b>D</b>enial of service</li>
+                    <li><b>E</b>levation of privilege</li>
+                </ul>
+                <br>
+                <li><b>DREAD threat ranking method</b> - <i>Helps us rank the threats found in order to know what is most important to take care of immediately based on:</i></li>
+                <ol>
+                    <li><b>D</b>amage potential</li>
+                    <li><b>R</b>eproductibility</li>
+                    <li><b>E</b>xploitation cost</li>
+                    <li><b>A</b>ffected users</li>
+                    <li><b>D</b>iscoverability</li>
+                </ol>
+                <ul>
+                <br>
+                    <li>Rating status:</li>
+                    <ul>
+                        <li>High threat - <i>Rating between 12 to 15</i></li>
+                        <li>Medium threat - <i>Rating between 8 to 11</i></li>
+                        <li>Low threat - <i>Rating between 5 to 7</i></li>
+                    </ul>
+                    <br>
+                </ul>
+            </ul>
+            <li><b>Risk assessment</b></li>
+            <ul>
+                <li>Can be done in two major ways:</li>
+                <br>
+                <ul>
+                    <li><b>Quantitative approach</b> - <i>We try to establish the expected losses for all successful attacks</i></li>
+                    <ul>
+                        <li>Pros:</li>
+                        <ul>
+                            <li>Allows us to reach an idea of the expected losses for every potential attack</li>
+                            <li>Very good for reliability related questions</li>
+                        </ul>
+                        <br>
+                        <li>Cons:</li>
+                        <ul>
+                            <li>An attacker can always find a new way to attack a system and that can drastically change your risk profile</li>
+                            <li>Difficult to get an accurate probability for every potential attack, especially for those that are very rare</li>
+                        </ul>
+                        <br>
+                    </ul>
+                    <li><b>Qualitative approach</b> - <i>Using categories and labels that stand in for numerical values to calculate a risk</i></li>
+                    <ul>
+                        <li>Examples:</li>
+                        <ul>
+                            <li><i>Low, medium and high</i></li>
+                            <li><i>The levels of classified information used by the Department of Defence in the US</i></li>
+                            <li><i>etc.</i></li>
+                        </ul>
+                        <br>
+                    </ul>
+                </ul>
+            </ul>
+            <li><b>Risk management</b></li>
+            <ul>
+                <li>Transferring the risk</li>
+                <li>Mitigating the risk</li>
+                <li>Removing the risk</li>
+                <li>Accepting the risk</li>
+            </ul>
+            <br>
+            <li><b>Breach</b> - <i>Any incident that results in unauthorized access to computer data, applications, networks or devices, which results in information being accessed without authorization</i></li>
+            <br>
+            <ul>
+                <li>Different types of breaches:</li>
+                <ul>
+                    <li>Breach in <b>security</b></li>
+                    <li>Breach in <b>availability</b></li>
+                    <li>Breach in <b>confidentiality</b></li>
+                    <li>Breach in <b>integrity</b></li>
+                </ul>
+                <br>
+            </ul>
+            <!--
+            <li><b>Unauthorized state</b> - <i></i></li>
+            <ul>
+                <li><b>State</b> - <i></i></li>
+            </ul>
+            -->
+            <br>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

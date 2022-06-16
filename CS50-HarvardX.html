@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <title>Introduction to Computer Science (CS50) by HarvardX</title>
+</head>
+<body>
+    <h1 id="page_title"><a href="https://www.edx.org/course/introduction-computer-science-harvardx-cs50x?index=product&queryID=a1e84b92c53b4774b1286b1e05e1aeba&position=1" target="_blank">Introduction to Computer Science (CS50)</a> by HarvardX</h1>
+    <h5 id="last_updated">Last updated: 6/14/2022</h5>
+    
+    <div id="concepts">
+
+
+        <!-- Theory -->
+        <h3>Theory</h3>
+        <div class="notes">
+            <li>Computers only speak Binary - <i>A combination of 0s and 1s</i></li>
+            <ul>
+                <li>By using different patterns of 0s and 1s, these binary digits (bits) can be used to represent different numbers and letters</li>
+                <li>Computers only speak Binary because it's easier to store</li>
+                <br>
+                <li>Binary digits lengths:</li>
+                <ul>
+                    <li><b>Bit</b> - A binary number <i>(Either 0 or 1)</i></li>
+                    <li><b>Byte</b> - A block of 8 bits</li>
+                    <li><b>Gigabyte</b> - </li>
+                    <li><b>Terabyte</b> - </li>
+                    <li>etc.</li>
+                </ul>
+                <br>
+                <li>How does a computer map which bits represent letters, numbers, characters, etc.?</li>
+                <ul>
+                    <li>By having different file formats, containers, etc.</li>
+                    <li>By leaving hints to the computer that tells it to interpret the following bits as follows</li>
+                </ul>
+            </ul>
+            <br>
+            <li><b>ASCII</b> - <i><b>A</b>merican <b>S</b>tandard <b>C</b>ode for <b>I</b>nformation <b>I</b>nterchange</i></li>
+            <br>
+            <li><b>Unicode</b> - <i>A mapping (A collection of values used as input) of many more numbers to many more numbers, letters and characters</i></li>
+            <ul>
+                <li>Allows you to represent more than 256 characters (one byte per character), such as letters with accents and emojis</li>
+                <li>Unicode can use 16 bits, 32 bits, etc. which allows us to represent even more numbers, letters and characters</li>
+            </ul>
+            <br>
+            <li>Computers represent:</li>
+            <ul>
+                <li>Colors by using RGB values</li>
+                <li>Videos through Binary code (Since they're just a grid of pixels or dots that each are represented through Binary code and when brought together, form together an image and when put together in a sequence, creates a video</li>
+                <li>Music by repsenting each note as a sequence of numbers</li>
+                <li>etc.</li>
+            </ul>
+            <br>
+            <li><b>Input => Algorithm => Output</b></li>
+            <ul>
+                <li><b>Algorithm</b> - Step-by-step instructions for solving problems</li>
+                <br>
+                <li>Arguments => Functions => Output</li>
+            </ul>
+            <br>
+            <li>Pseudocode - <i>A way of expressing yourself towards an end of getting your idea for your program accross</i></li>
+            <li>Events - <i>Anytime you, a human, perform an action that the computer or program can listen for and repsond to</i></li>
+            <br>
+            <li>Basic universal syntax convetions:</li>
+            <ul>
+                <li><b>Correctness</b> - Making sure your code is correct</li>
+                <li><b>Design</b> - Making your code nice, clean and efficient (<i>Doesn't use too much memory and isn't redundant</i>)</li>
+                <li><b>Style</b> - Making your code look pretty to look at</li>
+            </ul>
+            <br>
+            <li>How do I write code?</li>
+            <ul>
+                <li>By using an <b>IDE</b> (<b>I</b>ntegrated <b>D</b>evelopment <b>E</b>nvironment) to write your source code adn then use a compiler (<i>a program who's purpose is to convert one language to another</i>) to translate youe source code into machine language</li>
+            </ul>
+            <br>
+            <li>What's a terminal?</li>
+            <ul>
+                <li>It's a <b>CLI</b> (<i><b>C</b>ommand <b>L</b>ine <b>I</b>nterface</i>) on top of an operating system that allows you to interact with a computer and run commands on a server that you have access to</li>
+                <li>It's where you'll be able to type in commands</li>
+            </ul>
+            <br>
+            <li>Variables and functions</li>
+            <ul>
+
+            </ul>
+            <br>
+            <li>Loops</li>
+            <ul>
+                <li><b>For loops</b></li>
+                <ul>
+                    <li>i is declared inside the for loop</li>
+                </ul>
+                <li><b>While loops</b></li>
+                <ul>
+                    <li>i is declared outside the while loop</li>
+                </ul>
+            </ul>
+            <li><b>Integer Overflow</b></li>
+            <ul>
+                <li>Integers can overflow if you're trying to use more bits than you have available (Each computer have limited bits)</li>
+                <li>Bits are small units of machine (Binary) code in a computer that holds data</li>
+            </ul>
+            <br>
+            <li><b>Truncation</b></li>
+            <ul>
+                <li>When you use integers together in any mathimatical equation, you'll get an integer as an answer but if one of the numbers involved is an float, the program will automatically throw away all the numebrs after the decimal point (<i>Present in C, etc.</i>)</li>
+                <li>To solve prevent this, you do a <b>type conversion</b> (int to float)</li>
+            </ul>
+        </div> 
+
+
+        <!-- C -->
+        <h3>C</h3>
+        <li>Syntax</li>
+        <ul>
+            <li>You have to tell the computer what the data type of each variable in your program is, as well as what data type your function will return</li>
+            <li>Once you initialize a variable, you don't need to keep specifying it's data type</li>
+        </ul>
+        <br>
+        <li>Operators</li>
+        <ul>
+            <li>= - <i>Assignment operator</i></li>
+            <li>% - <i>Format string</i></li>
+            <li>+</li>
+            <li>-</li>
+            <li>/</li>
+            <li>*</li>
+        </ul>
+        <br>
+        <li><b>Data types:</b></li>
+        <ul>
+            <li><b>char</b> - <i>Single characters</i></li>
+            <li><b>double</b> - <i>A more precise number containing more numbers after the decimal point</i></li>
+            <li><b>float</b> - <i>A number with a decimal point in it</i></li>
+            <li><b>int</b> - <i>A whole number</i></li>
+            <li><b>long</b> - <i>A bigger whole number</i></li>
+            <li>void</li> - <i>Not a data type but rather just a type</i>
+
+            <li>Additional data types (from the CS50 library)</li>
+            <ul>
+                <li><b>bool</b> - <i>boolean (true or false)</i></li>
+                <li><b>string</b> - <i>An array of characters</i></li>
+            </ul>
+        </ul>
+        <br>
+        <li>Format strings</li>
+        <ul>
+            <li>%c - <i>char</i></li>
+            <li>%f - <i>float or double (You can add the number of decimal numbers that you specifically want to have by adding a period with the number of decimals you want between the "%" and "f" - ex: %.2f)</i></li>
+            <li>%i - <i>int</i></li>
+            <li>%li - <i>long</i></li>
+            <li>%s - <i>string</i></li>
+            <li>etc.</li>
+        </ul>
+
+        <!-- Python -->
+        <h3>Python</h3>
+
+        <!-- JavaScript -->
+        <h3>JavaScript</h3>
+
+        <!-- HTML and CSS -->
+        <h3>HTML and CSS</h3>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
